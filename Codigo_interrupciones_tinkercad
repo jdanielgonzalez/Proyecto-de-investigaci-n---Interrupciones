@@ -1,0 +1,24 @@
+int sensor = 0 ; // variable para el pin analogico
+int umbral = 25 ; // umbral
+
+void setup() //ciclo setup que solo se ejecuta una vez
+{
+  pinMode(11,OUTPUT); //inicializo el pin 11 en modo salida  
+}
+void loop() //ciclo loop que se repite indefinidamente
+{
+  int lectura = analogRead(sensor); //lectura del pin 0 analogico
+  float voltaje = 5.0 /1024 * lectura ; // Voltaje
+  float temp = voltaje * 100 -50 ; //temperatura 
+
+  //condicionales
+  if (temp >= umbral) //si la temperatura es mayor igual que el umbral 
+    digitalWrite(11, HIGH) ; //encienda el led
+  
+  else //en otro caso 
+//haga cualquier otra funcion, en este caso es esperar un segundo
+// y mantener apagado el led
+    digitalWrite(11,LOW);
+  delay(1000);
+}
+
