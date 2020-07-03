@@ -42,9 +42,16 @@ En general, actúan de la siguiente manera: Un programa en ejecución llega a un
 Una interrupción de software es causada intencionadamente por la ejecución de una instrucción especial que, por diseño, invoca una interrupción cuando se ejecuta esto nos indica que realmente no es cuestión del lenguaje de programación si no del diseño previo del software y de las interrupciones que se consideren necesarias después de ciertas instrucciones. Esas instrucciones funcionan de manera similar a las llamadas de subrutinas y se utilizan para diversos fines, como solicitar servicios del sistema operativo e interactuar con los controladores de dispositivos (por ejemplo, para leer o escribir medios de almacenamiento) como son interrupciones controladas netamente por instrucciones realizadas por el procesador estas mismas no se ven afectadas por el uso de un hardware diferente.
 
 
+\section*{Implementación}
+
+La imagen “montaje interrupciones” muestra el montaje en Arduino en la plataforma TinKerCad, donde se conecta un sensor de temperatura al Arduino al pin analógico 0 por el pin de salida de voltaje del sensor, se alimenta este sensor con 5 voltios y aparte se conecta un led al pin 11 digital.\\
+Primero inicializamos dos variables las cuales son sensor y umbral, la variable sensor será el número del pin analógico que usaremos y la variable umbral será el umbral de temperatura que elijamos a conveniencia, yo he elegido 25° ya que pretendo “simular” la temperatura que mantendría un procesador sencillo. 
+En el ciclo loop creo una variable llamada lectura la cual me leerá el voltaje del sensor y luego convertiré este valor de voltaje a temperatura guardándolo en una variable llamada temp. 
+Finalmente coloco condicionales que activaran el led una vez la temperatura sobrepase el umbral y de no ser así lo dejara apagado y podrá realizar otras tareas.
 
 
-\section*{Referencias}
+
+\section*{Bibliografia}
 
 \small 
 
@@ -67,6 +74,8 @@ Una interrupción de software es causada intencionadamente por la ejecución de 
     arq-teo08.pdf. Arquitectura de Computadoras – Interrupciones. 
     (Basadas en las Notas de Teórico Versión 1.0 del Dpto. de 
     Arquitectura-InCo-FIng)
+
+[6] Codd, Edgar F. "Multiprogramming". Advances in Computers. 3: 82.
 \end{verbatim}
 
 
